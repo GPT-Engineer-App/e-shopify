@@ -22,7 +22,49 @@ const products = [
     price: 49.99,
     image: "https://images.unsplash.com/photo-1542319630-55fb7f7c944a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwM3xlbnwwfHx8fDE3MDg4NzExNTN8MA&ixlib=rb-4.0.3&q=80&w=1080",
   },
-  // Add more products as needed
+  {
+    id: 4,
+    name: "Men's T-Shirt",
+    price: 19.99,
+    image: "https://example.com/mens-tshirt.jpg",
+    category: "men",
+  },
+  {
+    id: 5,
+    name: "Women's T-Shirt",
+    price: 19.99,
+    image: "https://example.com/womens-tshirt.jpg",
+    category: "women",
+  },
+  {
+    id: 6,
+    name: "Kids' T-Shirt",
+    price: 14.99,
+    image: "https://example.com/kids-tshirt.jpg",
+    category: "kids",
+  },
+  {
+    id: 7,
+    name: "Men's Trousers",
+    price: 29.99,
+    image: "https://example.com/mens-trousers.jpg",
+    category: "men",
+  },
+  {
+    id: 8,
+    name: "Women's Trousers",
+    price: 29.99,
+    image: "https://example.com/womens-trousers.jpg",
+    category: "women",
+  },
+  {
+    id: 9,
+    name: "Kids' Trousers",
+    price: 19.99,
+    image: "https://example.com/kids-trousers.jpg",
+    category: "kids",
+  },
+  // Continue adding more products as needed
 ];
 
 const ClothingSelection = ({ setCategory }) => {
