@@ -6,7 +6,7 @@ const NavigationBar = () => {
   return (
     <Flex as="nav" justify="space-between" align="center" p={5} bg="blue.500" color="white">
       <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-        E-Commerce
+        Fahverse.com
       </Heading>
       <Flex>
         <Link href="/" p={2}>
