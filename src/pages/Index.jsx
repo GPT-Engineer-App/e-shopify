@@ -64,7 +64,28 @@ const products = [
     image: "https://images.unsplash.com/photo-1582552938351-1e40ef402538",
     category: "kids",
   },
-  // Continue adding more products as needed
+  {
+    id: 10,
+    name: "Casual Jacket",
+    price: 59.99,
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf",
+    category: "men",
+  },
+  {
+    id: 11,
+    name: "Elegant Dress",
+    price: 79.99,
+    image: "https://images.unsplash.com/photo-1582552938351-1e40ef402538",
+    category: "women",
+  },
+  {
+    id: 12,
+    name: "Cool Kid's Sneakers",
+    price: 39.99,
+    image: "https://images.unsplash.com/photo-1515669097368-22e68427d265",
+    category: "kids",
+  },
+  // Add more products as needed...
 ];
 
 const ClothingSelection = ({ setCategory }) => {
