@@ -28,10 +28,11 @@ const products = [
 const Index = () => {
   const [colorTone, setColorTone] = useState("");
   const [bodyType, setBodyType] = useState("");
+  const [bestSuitedColor, setBestSuitedColor] = useState("");
 
   const filteredProducts = products.filter((product) => {
-    // Replace this with actual logic to match products to color tone and body type
-    return (!colorTone || product.colorTone === colorTone) && (!bodyType || product.bodyType === bodyType);
+    // Updated logic to match products to best-suited color, color tone, and body type
+    return (!bestSuitedColor || product.color === bestSuitedColor) && (!colorTone || product.colorTone === colorTone) && (!bodyType || product.bodyType === bodyType);
   });
 
   const bg = useColorModeValue("gray.50", "gray.800");
@@ -52,7 +53,7 @@ const Index = () => {
 
       {/* Product Grid */}
       <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
-        <FilterOptions setColorTone={setColorTone} setBodyType={setBodyType} />
+        <FilterOptions setColorTone={setColorTone} setBodyType={setBodyType} setBestSuitedColor={setBestSuitedColor} colorTone={colorTone} />
         {filteredProducts.map((product) => (
           <VStack key={product.id} borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} align="stretch" bg={useColorModeValue("white", "gray.700")}>
             <Image src={product.image} alt={product.name} boxSize="250px" objectFit="cover" />
