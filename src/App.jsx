@@ -1,6 +1,7 @@
 import NavigationBar from "./components/NavigationBar.jsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Index from "./pages/Index.jsx";
+import VirtualTryOn from "./pages/VirtualTryOn.jsx";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/virtual-try-on" element={<VirtualTryOn />} />
       </Routes>
     </Router>
   );
