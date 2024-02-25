@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Flex, Grid, Heading, Image, Text, VStack, useColorModeValue } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Heading, Image, Text, VStack, useColorModeValue, Radio, Stack, RadioGroup } from "@chakra-ui/react";
 import FilterOptions from "../components/FilterOptions.jsx";
 import { FaShoppingCart, FaSearch, FaUserCircle } from "react-icons/fa";
 
@@ -25,14 +25,26 @@ const products = [
   // Add more products as needed
 ];
 
+const ClothingSelection = ({ setCategory }) => {
+  return (
+    <RadioGroup onChange={setCategory} defaultValue="all">
+      <Stack direction="row" mb={4}>
+        <Radio value="men">Men</Radio>
+        <Radio value="women">Women</Radio>
+        <Radio value="kids">Kids</Radio>
+      </Stack>
+    </RadioGroup>
+  );
+};
+
 const Index = () => {
+  const [category, setCategory] = useState("all");
   const [colorTone, setColorTone] = useState("");
   const [bodyType, setBodyType] = useState("");
   const [bestSuitedColor, setBestSuitedColor] = useState("");
 
   const filteredProducts = products.filter((product) => {
-    // Updated logic to match products to best-suited color, color tone, and body type
-    return (!bestSuitedColor || product.color === bestSuitedColor) && (!colorTone || product.colorTone === colorTone) && (!bodyType || product.bodyType === bodyType);
+    return (category === "all" || product.category === category) && (!bestSuitedColor || product.color === bestSuitedColor) && (!colorTone || product.colorTone === colorTone) && (!bodyType || product.bodyType === bodyType);
   });
 
   const bg = useColorModeValue("gray.50", "gray.800");
@@ -52,8 +64,13 @@ const Index = () => {
       </Box>
 
       {/* Product Grid */}
-      <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
+      {/* Category Selection */}
+      <Box as="section" mb={10}>
+        <ClothingSelection setCategory={setCategory} />
+        {/* Existing FilterOptions component */}
         <FilterOptions setColorTone={setColorTone} setBodyType={setBodyType} setBestSuitedColor={setBestSuitedColor} colorTone={colorTone} />
+      </Box>
+      <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
         {filteredProducts.map((product) => (
           <VStack key={product.id} borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} align="stretch" bg={useColorModeValue("white", "gray.700")}>
             <Image src={product.image} alt={product.name} boxSize="250px" objectFit="cover" />

@@ -18,7 +18,15 @@ const NavigationBar = () => {
         <Link href="/create-avatar" p={2}>
           Create Avatar
         </Link>
-        {/* Add other navigation links as needed */}
+        <Link href="?category=men" p={2}>
+          Men
+        </Link>
+        <Link href="?category=women" p={2}>
+          Women
+        </Link>
+        <Link href="?category=kids" p={2}>
+          Kids
+        </Link>
       </Flex>
       <Flex>
         <Link href="#" p={2} leftIcon={<FaSearch />}>
