@@ -15,6 +15,9 @@ const NavigationBar = () => {
         <Link href="/virtual-try-on" p={2}>
           Virtual Try-On
         </Link>
+        <Link href="/create-avatar" p={2}>
+          Create Avatar
+        </Link>
         {/* Add other navigation links as needed */}
       </Flex>
       <Flex>
